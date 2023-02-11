@@ -1,4 +1,4 @@
-# Sign-Up_Form
+# Sign-Up Form
 
 Features:<br>
 • Responsive design based on flexbox<br>
