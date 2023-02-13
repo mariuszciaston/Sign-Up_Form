@@ -1,7 +1,5 @@
 html {
     font-size: 16px;
-    background: url(monstera.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 
 body {
@@ -14,55 +12,138 @@ body {
 }
 
 header {
-    background-color: rgb(0, 0, 0, 0.75);
-    padding: 1rem;
+    background: url("monstera.jpg") no-repeat center center;
+    background-size: cover;
+    /* padding: 1rem; */
+    margin: 0;
+    height: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header div {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+
+    margin: auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    gap: 1rem;
+
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 600;
     display: inherit;
     align-items: inherit;
+
+
 }
 
 header img {
-    height: 8rem;
-    padding: 1rem;
-}
-main {
-    color: black;    
-    background-color: hsl(0, 0%, 90%);
-    font-weight: 600;
+    height: 6rem;
 }
 
-main div{
+
+main {
+    color: black;
+    background-color: hsl(0, 0%, 90%);
+    font-weight: 600;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main > div {
     padding: 1rem;
 }
 
 main p {
     margin: 1rem 0;
-    /* font-size: 1.166rem; */
+    /* font-size: 1.2rem; */
 }
 
-.input-section{
+.input-section {
     background-color: white;
     /* padding: 1rem; */
 
 }
 
-.input-section p{
+.input-section p {
     /* padding: 1rem; */
 }
 
-main form{
+main form {
     font-weight: 400;
     margin: 1rem 0;
+
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    gap: 1rem;
+    
 }
+main form label{
+    display: flex;
+}
+
+main form input{
+
+}
+
+main form div{
+    /* margin: 1rem 0; */
+    /* min-width: 100%; */
+}
+
+
 
 main button {
     margin: 1rem 0;
+    color: white;
+    background-color: green;
+    border: none;
+    padding: 1rem;
+    font-size: inherit;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+main button:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+
+}
+
+
+
+@media only screen and (min-width: 769px) {
+
+body{
+    flex-direction: row;
+
+}
+
+header{
+    height: 100vh;
+    width: 41.66%;
+}
+
+main{
+    /* width: 100vw; */
+    width: 58.33%;
+
+
+    display: flex;
+    justify-content: center;
+}
+
 }
