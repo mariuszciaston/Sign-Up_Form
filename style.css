@@ -14,28 +14,24 @@ body {
 header {
     background: url("monstera.jpg") no-repeat center center;
     background-size: cover;
-    /* padding: 1rem; */
     margin: 0;
     height: 20rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 header div {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
-
     margin: auto;
     padding: 2rem;
     border-radius: 2rem;
     gap: 1rem;
-
 }
 
 header h1 {
@@ -51,6 +47,16 @@ header img {
     height: 6rem;
 }
 
+header a{
+    color: white;
+    /* text-align: right; */
+    position: absolute;
+    right: 0;
+    bottom:0;
+    text-decoration: none;
+margin: 1rem;
+}
+
 
 main {
     color: black;
@@ -59,6 +65,7 @@ main {
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 main > div {
@@ -72,38 +79,44 @@ main p {
 
 .input-section {
     background-color: white;
-    /* padding: 1rem; */
+    
 
 }
-
-.input-section p {
-    /* padding: 1rem; */
-}
-
 main form {
     font-weight: 400;
     margin: 1rem 0;
 
     display: flex;
-    /* flex-wrap: wrap; */
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     gap: 1rem;
-    
 }
-main form label{
+main form div label{
     display: flex;
+    padding: 0.25rem 0;
 }
 
-main form input{
-
+main form div input{
+    width: 16rem;
+    margin:0;
+    border: 0.0625rem solid black;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.25rem;
 }
 
-main form div{
-    /* margin: 1rem 0; */
-    /* min-width: 100%; */
+main form div input:not(:focus):valid
+{
+background-color: rgba(0, 255, 0, 0.1);
 }
 
+main form div input:not(:focus):not(:placeholder-shown):invalid{
+    background-color: rgba(255, 0, 0, 0.1);
+    }
 
+main form div input::placeholder{
+    color: rgba(0,0,0, 0.5);
+}
 
 main button {
     margin: 1rem 0;
@@ -120,16 +133,16 @@ main button {
 main button:hover{
     cursor: pointer;
     background-color: darkgreen;
-
 }
 
-
+main a{
+    color: green;
+}
 
 @media only screen and (min-width: 769px) {
 
 body{
     flex-direction: row;
-
 }
 
 header{
@@ -138,12 +151,7 @@ header{
 }
 
 main{
-    /* width: 100vw; */
     width: 58.33%;
-
-
-    display: flex;
-    justify-content: center;
 }
 
 }
