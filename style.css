@@ -54,7 +54,8 @@ header a{
     right: 0;
     bottom:0;
     text-decoration: none;
-margin: 1rem;
+    margin: 1rem;
+    font-size: 0.75rem;
 }
 
 
@@ -74,7 +75,7 @@ main > div {
 
 main p {
     margin: 1rem 0;
-    /* font-size: 1.2rem; */
+    font-size: 1.25rem;
 }
 
 .input-section {
