@@ -47,12 +47,11 @@ header img {
     height: 6rem;
 }
 
-header a{
-    color: white;
-    /* text-align: right; */
+header a {
+    color: hsla(0, 0%, 100%, 0.75);
     position: absolute;
     right: 0;
-    bottom:0;
+    bottom: 0;
     text-decoration: none;
     margin: 1rem;
     font-size: 0.75rem;
@@ -69,7 +68,7 @@ main {
     justify-content: center;
 }
 
-main > div {
+main>div {
     padding: 1rem;
 }
 
@@ -80,25 +79,38 @@ main p {
 
 .input-section {
     background-color: white;
-    
-
 }
+
+.input-section p:nth-child(2) {
+    font-weight: 400;
+    font-size: 1rem;
+    color: hsla(0, 0%, 0%, 0.5)
+}
+
 main form {
     font-weight: 400;
     margin: 1rem 0;
-
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
-main form div label{
+
+main form div label {
     display: flex;
     padding: 0.25rem 0;
 }
 
-main form div input{
+label[for="password"]::after,
+label[for="confirm-password"]::after,
+label[for="email"]::after,
+label[for="first-name"]::after,
+label[for="last-name"]::after,
+label[for="phone-number"]::after {
+    content: "\00a0 *";
+}
+main form div input {
     width: 16rem;
-    margin:0;
+    margin: 0;
     border: 0.0625rem solid black;
     box-sizing: border-box;
     font-family: inherit;
@@ -106,17 +118,35 @@ main form div input{
     padding: 0.25rem;
 }
 
-main form div input:not(:focus):valid
-{
-background-color: rgba(0, 255, 0, 0.1);
+main form div input:focus {
+    border: solid 0.0625rem black;
+    outline: solid 0.125rem black;
+    border-radius: 0.125rem;
 }
 
-main form div input:not(:focus):not(:placeholder-shown):invalid{
-    background-color: rgba(255, 0, 0, 0.1);
-    }
+main form div input:not(:focus):valid {
+    background-color: rgba(0, 255, 0, 0.1);
+}
 
-main form div input::placeholder{
-    color: rgba(0,0,0, 0.5);
+main form div input:not(:focus):not(:placeholder-shown):invalid {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+main form div input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.error {
+    font-size: 0.875rem;
+    color: red;
+    margin: 0;
+    padding: 0.25rem 0;
+    display: none;
+    /* transition: padding 0.5s; */
+}
+
+.show{
+    display: block;
 }
 
 main button {
@@ -131,28 +161,28 @@ main button {
     font-weight: 600;
 }
 
-main button:hover{
+main button:hover {
     cursor: pointer;
     background-color: darkgreen;
 }
 
-main a{
+main a {
     color: green;
 }
 
 @media only screen and (min-width: 769px) {
 
-body{
-    flex-direction: row;
-}
+    body {
+        flex-direction: row;
+    }
 
-header{
-    height: 100vh;
-    width: 41.66%;
-}
+    header {
+        height: 100vh;
+        width: 41.66%;
+    }
 
-main{
-    width: 58.33%;
-}
+    main {
+        width: 58.33%;
+    }
 
 }
