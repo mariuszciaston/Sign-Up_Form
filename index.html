@@ -30,7 +30,7 @@
         </div>
         <div class="input-section">
             <p>Let's do this!</p>
-            <p>Fields marked with an asterisk (*) are required</p>
+            <p class="notice">Fields marked with an asterisk (*) are required</p>
             <form action="" method="post" id="new-account">
                 <div>
                     <label for="first-name">FIRST NAME</label>
@@ -43,30 +43,39 @@
                 <div>
                     <label for="email">EMAIL</label>
                     <input type="email" id="email" name="email" placeholder="thorodinson@viking.com" title="Please enter valid email adress, example: thorodinson@viking.com" required>
-                    <p id="email-error" class="error">⚠ Please enter a valid email address</p>
+                    <p id="email-error" class="error">⚠ Enter a valid email address</p>
                 </div>
                 <div>
                     <label for="phone-number">PHONE NUMBER</label>
-                    <input type="tel" id="phone-number" name="phone-number" minlength="9" maxlength="9" placeholder="666777888" title="Please enter valid phone number, example: 666777888" required>
+                    <input type="tel" id="phone-number" name="phone-number" minlength="9" maxlength="9" placeholder="666777888" title="Please enter valid phone number, example: 666777888" pattern="^\d{9}$" required>
                     <p id="phone-number-error" class="error">⚠ Enter a 9 digit phone number</p>
                 </div>
                 <div>
                     <label for="password">PASSWORD</label>
                     <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                    <p id="password-error" class="error">⚠ xxx</p>
+                    <div id="password-error" class="error">
+                        <p>At least 1 upper case letter</p>
+                        <p>At least 1 lower case letter</p>
+                        <p>At least 1 number or special character</p>
+                        <p>Minimum 8 characters</p>
+                    </div>
                 </div>
                 <div>
                     <label for="confirm-password">CONFIRM PASSWORD</label>
-                    <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the same password as in password field for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                    <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <p id="confirm-password-error" class="error">⚠ Passwords do not match</p>
+
                 </div>
             </form>
         </div>
         <div>
             <button type="submit" form="new-account"">Create Account</button>
-        <p>Already have an account? <a href=" #" title="Log in">Log in</a></p>
+        <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </main>
+
+    <!-- In 🍕 We Crust | Mariusz Ciastoń 2023 Github -->
+
 </body>
 
 </html>
