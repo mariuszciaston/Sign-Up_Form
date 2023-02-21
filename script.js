@@ -34,6 +34,10 @@ password.addEventListener("focusout", () => {
     }
 });
 
+
+
+
+
 confirmPassword.addEventListener("focusout", () => {
     if (password.value !== confirmPassword.value) {
         confirmPasswordError.classList.add('show');
@@ -65,3 +69,84 @@ confirmPassword.addEventListener("input", () => {
 // confirmPassword.addEventListener("input", () => {
 //     confirmPassword.validity.patternMismatch ? confirmPasswordError.classList.add('show') : confirmPasswordError.classList.remove('show');
 // });
+
+
+
+// function validatePassword()
+// {
+//     if(password.value !== confirmPassword.value)
+//     {
+//         alert('do not match');
+//         confirmPassword.checkValidity();
+//     } 
+//     else if(password.value == '' || password.value == undefined || password.value == null)
+//     {
+//         alert('empty');
+
+//         password.checkValidity();
+//     } 
+//     else
+//     {
+//         alert('match');
+
+//         password.checkValidity();
+//     }
+// }
+// password.onchange = validatePassword;
+// confirmPassword.onkeyup = validatePassword;
+
+
+
+
+
+
+// function validatePassword() {
+//     if (password.value !== confirmPassword.value) {
+//         confirmPassword.setCustomValidity("Passwords Don't Match");
+// alert(password.value + ' ' + confirmPassword.value);
+//         confirmPassword.checkValidity('');
+
+
+//     }
+//     else if (password.value == '' || password.value == undefined || password.value == null) {
+//         password.setCustomValidity("Passwords must not be empty");
+//         confirmPassword.checkValidity('');
+
+//     }
+//     else {
+//         password.setCustomValidity('');
+//         confirmPassword.checkValidity('');
+
+//     }
+// }
+// password.onchange = validatePassword;
+// confirmPassword.onkeyup = validatePassword;
+
+
+
+
+// const createAccountButton = document.querySelector('.create-acc-btn');
+// const newAccountForm = document.querySelector('new-account');
+
+// createAccountButton.addEventListener('click', () => {
+//     if (email.checkValidity() === true && password.value.trim() !== '' &&
+//         confirmPassword.value === password.value &&
+//         (/\d/.test(password.value) && password.value.trim().length >= 8 &&
+//             /[a-zA-Z]/.test(password.value))) {
+//         newAccountForm.submit()
+//     }
+// });
+
+
+
+const createAccountButton = document.querySelector('.create-acc-btn');
+const newAccountForm = document.querySelector('new-account');
+
+createAccountButton.addEventListener('click', () => {
+    if (email.checkValidity() === true && password.value.trim() !== '' &&
+        confirmPassword.value === password.value &&
+        (/\d/.test(password.value) && password.value.trim().length >= 8 &&
+            /[a-zA-Z]/.test(password.value))) {
+        newAccountForm.submit()
+    }
+});
