@@ -140,9 +140,12 @@ main form div input::placeholder {
     width: 16rem;
     font-size: 0.875rem;
     color: red;
+    opacity: 0;
     margin: 0;
     padding: 0.25rem 0;
-    display: none;
+    display: block;
+    max-height: 0;
+    transition: all 1s ease-in-out;
 }
 
 .error p {
@@ -153,6 +156,8 @@ main form div input::placeholder {
 
 .show{
     display: block;
+    max-height: 128px;
+    opacity: 1;
 }
 
 main button {
