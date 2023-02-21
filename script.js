@@ -1,10 +1,41 @@
+
+const firstName = document.querySelector('#first-name');
+const lastName = document.querySelector('#last-name');
 const phoneNumber = document.querySelector('#phone-number');
 const confirmPassword = document.querySelector('#confirm-password');
 
+const firstNameError = document.querySelector('#first-name-error');
+const lastNameError = document.querySelector('#last-name-error');
 const emailError = document.querySelector('#email-error');
 const phoneNumberError = document.querySelector('#phone-number-error');
 const passwordError = document.querySelector('#password-error');
 const confirmPasswordError = document.querySelector('#confirm-password-error');
+
+// SHOW OR HIDE ERROR MESSAGES 
+
+firstName.addEventListener("focusout", () => {
+    if (firstName.validity.patternMismatch) {
+        firstNameError.classList.add('show')
+    }
+});
+
+firstName.addEventListener("input", () => {
+    if (firstName.validity.patternMismatch === false) {
+        firstNameError.classList.remove('show')
+    };
+});
+
+lastName.addEventListener("focusout", () => {
+    if (lastName.validity.patternMismatch) {
+        lastNameError.classList.add('show')
+    }
+});
+
+lastName.addEventListener("input", () => {
+    if (lastName.validity.patternMismatch === false) {
+        lastNameError.classList.remove('show')
+    };
+});
 
 email.addEventListener("focusout", () => {
     email.validity.typeMismatch ? emailError.classList.add('show') : emailError.classList.remove('show');
@@ -22,8 +53,6 @@ phoneNumber.addEventListener("input", () => {
     };
 });
 
-
-
 password.addEventListener("focus", () => {
     passwordError.classList.add('show');
 });
@@ -33,10 +62,6 @@ password.addEventListener("focusout", () => {
         passwordError.classList.remove('show');
     }
 });
-
-
-
-
 
 confirmPassword.addEventListener("focusout", () => {
     if (password.value !== confirmPassword.value) {
@@ -50,103 +75,27 @@ confirmPassword.addEventListener("input", () => {
     }
 });
 
+// VALIDATION AFTER CREATE ACCOUNT BUTTON PRESS
 
-
-// SUBMIT
-
-// confirmPassword.addEventListener("input", () => {
-
-//     if (((password.validity.patternMismatch) && (confirmPassword.validity.patternMismatch)) && (password.value === confirmPassword.value)) {
-//         alert(password.value + ' password match ' + confirmPassword.value);
-//     }
-//     else {
-//         alert('passwords do not match');
-//     }
-// });
-
-
-
-// confirmPassword.addEventListener("input", () => {
-//     confirmPassword.validity.patternMismatch ? confirmPasswordError.classList.add('show') : confirmPasswordError.classList.remove('show');
-// });
-
-
-
-// function validatePassword()
-// {
-//     if(password.value !== confirmPassword.value)
-//     {
-//         alert('do not match');
-//         confirmPassword.checkValidity();
-//     } 
-//     else if(password.value == '' || password.value == undefined || password.value == null)
-//     {
-//         alert('empty');
-
-//         password.checkValidity();
-//     } 
-//     else
-//     {
-//         alert('match');
-
-//         password.checkValidity();
-//     }
-// }
-// password.onchange = validatePassword;
-// confirmPassword.onkeyup = validatePassword;
-
-
-
-
-
-
-// function validatePassword() {
-//     if (password.value !== confirmPassword.value) {
-//         confirmPassword.setCustomValidity("Passwords Don't Match");
-// alert(password.value + ' ' + confirmPassword.value);
-//         confirmPassword.checkValidity('');
-
-
-//     }
-//     else if (password.value == '' || password.value == undefined || password.value == null) {
-//         password.setCustomValidity("Passwords must not be empty");
-//         confirmPassword.checkValidity('');
-
-//     }
-//     else {
-//         password.setCustomValidity('');
-//         confirmPassword.checkValidity('');
-
-//     }
-// }
-// password.onchange = validatePassword;
-// confirmPassword.onkeyup = validatePassword;
-
-
-
-
-// const createAccountButton = document.querySelector('.create-acc-btn');
-// const newAccountForm = document.querySelector('new-account');
-
-// createAccountButton.addEventListener('click', () => {
-//     if (email.checkValidity() === true && password.value.trim() !== '' &&
-//         confirmPassword.value === password.value &&
-//         (/\d/.test(password.value) && password.value.trim().length >= 8 &&
-//             /[a-zA-Z]/.test(password.value))) {
-//         newAccountForm.submit()
-//     }
-// });
-
-
-
-const createAccountButton = document.querySelector('.create-acc-btn');
+const createAccountBtn = document.querySelector('#createAccountBtn');
 const newAccountForm = document.querySelector('new-account');
 
-createAccountButton.addEventListener('click', () => {
-    if (email.checkValidity() === true && password.value.trim() !== '' &&
-        confirmPassword.value === password.value &&
-        (/\d/.test(password.value) && password.value.trim().length >= 8 &&
-            /[a-zA-Z]/.test(password.value))) {
+createAccountBtn.addEventListener('click', () => {
+    if (
+        /[a-zA-Z]+/.test(firstName.value)
+        &&
+        /[a-zA-Z]+/.test(lastName.value)
+        &&
+        email.checkValidity() === true
+        &&
+        phoneNumber.checkValidity() === true
+        &&
+        password.value.trim() !== ''
+        &&
+        /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password.value)
+        &&
+        password.value === confirmPassword.value
+    ) {
         newAccountForm.submit()
     }
 });

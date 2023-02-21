@@ -31,14 +31,16 @@
         <div class="input-section">
             <p>Let's do this!</p>
             <p class="notice">Fields marked with an asterisk (*) are required</p>
-            <form action="" method="post" id="new-account">
+            <form id="new-account"> <!-- method="post"  -->
                 <div>
                     <label for="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="Thor" title="Please enter your first name, example: Thor" required>
+                    <input type="text" id="first-name" name="first-name" placeholder="Thor" title="Please enter your first name, example: Thor" pattern="[a-zA-Z]+" required>
+                    <p id="first-name-error" class="error">⚠ Enter name, only letters allowed</p>
                 </div>
                 <div>
                     <label for="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Odinson" title="Please enter your last name, example: Odinson" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Odinson" title="Please enter your last name, example: Odinson" pattern="[a-zA-Z]+" required>
+                    <p id="last-name-error" class="error">⚠ Enter surname, only letters allowed</p>
                 </div>
                 <div>
                     <label for="email">EMAIL</label>
@@ -64,18 +66,15 @@
                     <label for="confirm-password">CONFIRM PASSWORD</label>
                     <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <p id="confirm-password-error" class="error">⚠ Passwords do not match</p>
-
                 </div>
             </form>
         </div>
         <div>
-            <button type="submit" form="new-account"">Create Account</button>
-        <p>Already have an account? <a href="#">Log in</a></p>
+            <button type="submit" form="new-account" id="createAccountBtn">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </main>
-
-    <!-- In 🍕 We Crust | Mariusz Ciastoń 2023 Github -->
-
+    <!-- In 🍕 We Crust | 2023 Mariusz Ciastoń Github -->
 </body>
 
 </html>

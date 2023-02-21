@@ -81,7 +81,7 @@ main p {
     background-color: white;
 }
 
-.input-section .notice{
+.input-section .notice {
     font-weight: 400;
     font-size: 1rem;
     color: hsla(0, 0%, 0%, 0.5)
@@ -108,6 +108,7 @@ label[for="last-name"]::after,
 label[for="phone-number"]::after {
     content: "\00a0 *";
 }
+
 main form div input {
     width: 16rem;
     margin: 0;
@@ -143,9 +144,9 @@ main form div input::placeholder {
     opacity: 0;
     margin: 0;
     padding: 0.25rem 0;
-    display: block;
     max-height: 0;
     transition: all 1s ease-in-out;
+    visibility: hidden;
 }
 
 .error p {
@@ -154,10 +155,11 @@ main form div input::placeholder {
     padding: 0.125rem 0;
 }
 
-.show{
-    display: block;
+.show {
     max-height: 128px;
     opacity: 1;
+    visibility: visible;
+
 }
 
 main button {
@@ -193,14 +195,14 @@ main a {
 
     header {
         /* height: auto; */
-        min-height:100vh;
+        min-height: 100vh;
         width: 41.66%;
-        
+
         position: sticky;
         top: 0px;
         bottom: 0px;
 
-   
+
     }
 
     main {
