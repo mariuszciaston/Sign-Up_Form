@@ -9,7 +9,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-
+    flex-wrap: wrap;
 }
 
 header {
@@ -53,19 +53,22 @@ header a {
     right: 0;
     bottom: 0;
     text-decoration: none;
+    /* margin: 1.625rem 1rem; */
     margin: 1rem;
     font-size: 0.75rem;
 }
 
-
-main {
-    color: black;
-    font-weight: 600;
-    background-color: hsl(0, 0%, 90%);
-
+.wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: hsl(0, 0%, 90%);
+    color: black;
+}
+
+main {
+    font-weight: 600;
+    margin: auto;
 }
 
 main>div {
@@ -159,7 +162,6 @@ main form div input::placeholder {
     max-height: 128px;
     opacity: 1;
     visibility: visible;
-
 }
 
 main button {
@@ -183,6 +185,31 @@ main a {
     color: green;
 }
 
+footer p {
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    /* margin: 1rem; */
+    margin: 0.425rem 1rem;
+
+}
+
+footer p span {
+    font-size: 1.625rem;
+}
+
+.fa-github {
+    color: black;
+    opacity: 75%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    opacity: 100%;
+    transform: rotate(360deg) scale(1.2);
+}
+
 @media only screen and (min-width: 769px) {
 
     body {
@@ -194,24 +221,14 @@ main a {
     }
 
     header {
-        /* height: auto; */
         min-height: 100vh;
         width: 41.66%;
-
         position: sticky;
         top: 0px;
         bottom: 0px;
-
-
     }
 
-    main {
-        /* height: auto; */
-        /* min-height:100vh; */
-
-        width: 58.33%;
-        /* background-color: pink !important; */
-        /* overflow: scroll; */
+    .wrapper {
+          width: 58.33%;
     }
-
 }

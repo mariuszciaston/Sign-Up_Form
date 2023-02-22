@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/5f5b4189ad.js" crossorigin="anonymous" defer></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -23,58 +28,67 @@
             <a href="https://unsplash.com/@natkingkov" target="_blank">Photo by Natalie Kovach</a>
         </p>
     </header>
-    <main>
-        <div>
-            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.</p>
-            <p>You know you want to.</p>
-        </div>
-        <div class="input-section">
-            <p>Let's do this!</p>
-            <p class="notice">Fields marked with an asterisk (*) are required</p>
-            <form id="new-account"> <!-- method="post"  -->
-                <div>
-                    <label for="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="Thor" title="Please enter your first name, example: Thor" pattern="[a-zA-Z]+" required>
-                    <p id="first-name-error" class="error">⚠ Enter name, only letters allowed</p>
-                </div>
-                <div>
-                    <label for="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Odinson" title="Please enter your last name, example: Odinson" pattern="[a-zA-Z]+" required>
-                    <p id="last-name-error" class="error">⚠ Enter surname, only letters allowed</p>
-                </div>
-                <div>
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email" placeholder="thorodinson@viking.com" title="Please enter valid email adress, example: thorodinson@viking.com" required>
-                    <p id="email-error" class="error">⚠ Enter a valid email address</p>
-                </div>
-                <div>
-                    <label for="phone-number">PHONE NUMBER</label>
-                    <input type="tel" id="phone-number" name="phone-number" minlength="9" maxlength="9" placeholder="666777888" title="Please enter valid phone number, example: 666777888" pattern="^\d{9}$" required>
-                    <p id="phone-number-error" class="error">⚠ Enter a 9 digit phone number</p>
-                </div>
-                <div>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                    <div id="password-error" class="error">
-                        <p>At least 1 upper case letter</p>
-                        <p>At least 1 lower case letter</p>
-                        <p>At least 1 number or special character</p>
-                        <p>Minimum 8 characters</p>
+    <div class="wrapper">
+        
+        <main>
+            <div>
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.</p>
+                <p>You know you want to.</p>
+            </div>
+            <div class="input-section">
+                <p>Let's do this!</p>
+                <p class="notice">Fields marked with an asterisk (*) are required</p>
+                <form id="new-account"> <!-- method="post"  -->
+                    <div>
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Thor" title="Please enter your first name, example: Thor" pattern="[a-zA-Z]+" required>
+                        <p id="first-name-error" class="error">⚠ Enter name, only letters allowed</p>
                     </div>
-                </div>
-                <div>
-                    <label for="confirm-password">CONFIRM PASSWORD</label>
-                    <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                    <p id="confirm-password-error" class="error">⚠ Passwords do not match</p>
-                </div>
-            </form>
-        </div>
-        <div>
-            <button type="submit" form="new-account" id="createAccountBtn">Create Account</button>
-            <p>Already have an account? <a href="#">Log in</a></p>
-        </div>
+                    <div>
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Odinson" title="Please enter your last name, example: Odinson" pattern="[a-zA-Z]+" required>
+                        <p id="last-name-error" class="error">⚠ Enter surname, only letters allowed</p>
+                    </div>
+                    <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="thorodinson@viking.com" title="Please enter valid email adress, example: thorodinson@viking.com" required>
+                        <p id="email-error" class="error">⚠ Enter a valid email address</p>
+                    </div>
+                    <div>
+                        <label for="phone-number">PHONE NUMBER</label>
+                        <input type="tel" id="phone-number" name="phone-number" minlength="9" maxlength="9" placeholder="666777888" title="Please enter valid phone number, example: 666777888" pattern="^\d{9}$" required>
+                        <p id="phone-number-error" class="error">⚠ Enter a 9 digit phone number</p>
+                    </div>
+                    <div>
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <div id="password-error" class="error">
+                            <p>At least 1 upper case letter</p>
+                            <p>At least 1 lower case letter</p>
+                            <p>At least 1 number or special character</p>
+                            <p>Minimum 8 characters</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="confirm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <p id="confirm-password-error" class="error">⚠ Passwords do not match</p>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button type="submit" form="new-account" id="createAccountBtn">Create Account</button>
+                <p>Already have an account? <a href="#">Log in</a></p>
+            </div>
+        </main>
+        <footer>
+            <p>In <span>🍕</span> We Crust | Mariusz Ciastoń 2023 &nbsp; <a href="https://github.com/mariuszciaston/" target="_blank" rel="noopener"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></p>
+        </footer>
+
+
     </main>
-    <!-- In 🍕 We Crust | 2023 Mariusz Ciastoń Github -->
+    </div>
+
 </body>
 
 </html>
