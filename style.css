@@ -158,7 +158,7 @@ main form div input::placeholder {
     padding: 0.125rem 0;
 }
 
-.show {
+.errorMessage {
     max-height: 128px;
     opacity: 1;
     visibility: visible;

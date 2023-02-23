@@ -1,4 +1,3 @@
-
 const firstName = document.querySelector('#first-name');
 const lastName = document.querySelector('#last-name');
 const phoneNumber = document.querySelector('#phone-number');
@@ -11,76 +10,98 @@ const phoneNumberError = document.querySelector('#phone-number-error');
 const passwordError = document.querySelector('#password-error');
 const confirmPasswordError = document.querySelector('#confirm-password-error');
 
-// SHOW OR HIDE ERROR MESSAGES 
+// ERROR MESSAGES 
 
 firstName.addEventListener("focusout", () => {
-    if (firstName.validity.patternMismatch) {
-        firstNameError.classList.add('show')
-    }
+    if (firstName.validity.patternMismatch || firstName.value === '') {
+        firstNameError.classList.add('errorMessage')
+    };
 });
 
 firstName.addEventListener("input", () => {
     if (firstName.validity.patternMismatch === false) {
-        firstNameError.classList.remove('show')
+        firstNameError.classList.remove('errorMessage')
     };
 });
 
 lastName.addEventListener("focusout", () => {
-    if (lastName.validity.patternMismatch) {
-        lastNameError.classList.add('show')
+    if (lastName.validity.patternMismatch || lastName.value === '') {
+        lastNameError.classList.add('errorMessage')
     }
 });
 
 lastName.addEventListener("input", () => {
     if (lastName.validity.patternMismatch === false) {
-        lastNameError.classList.remove('show')
+        lastNameError.classList.remove('errorMessage')
     };
 });
 
 email.addEventListener("focusout", () => {
-    email.validity.typeMismatch ? emailError.classList.add('show') : emailError.classList.remove('show');
+    email.validity.typeMismatch || email.value === '' ? emailError.classList.add('errorMessage') : emailError.classList.remove('errorMessage');
 });
 
 phoneNumber.addEventListener("focusout", () => {
-    if (phoneNumber.validity.patternMismatch) {
-        phoneNumberError.classList.add('show')
+    if (phoneNumber.validity.patternMismatch || phoneNumber.value === '') {
+        phoneNumberError.classList.add('errorMessage')
     }
 });
 
 phoneNumber.addEventListener("input", () => {
     if (phoneNumber.validity.patternMismatch === false) {
-        phoneNumberError.classList.remove('show')
+        phoneNumberError.classList.remove('errorMessage')
     };
 });
 
 password.addEventListener("focus", () => {
-    passwordError.classList.add('show');
+    passwordError.classList.add('errorMessage');
 });
 
 password.addEventListener("focusout", () => {
     if (password.validity.patternMismatch === false) {
-        passwordError.classList.remove('show');
+        passwordError.classList.remove('errorMessage');
+    }
+
+    if (password.value === '') {
+        passwordError.classList.add('errorMessage');
     }
 });
 
 confirmPassword.addEventListener("focusout", () => {
     if (password.value !== confirmPassword.value) {
-        confirmPasswordError.classList.add('show');
+        confirmPasswordError.classList.add('errorMessage');
     }
 });
 
 confirmPassword.addEventListener("input", () => {
     if (password.value === confirmPassword.value) {
-        confirmPasswordError.classList.remove('show')
+        confirmPasswordError.classList.remove('errorMessage')
+
     }
 });
+
+function validateForm() {
+    firstName.validity.patternMismatch || firstName.value === '' ? firstNameError.classList.add('errorMessage') : firstNameError.classList.remove('errorMessage');
+    lastName.validity.patternMismatch || lastName.value === '' ? lastNameError.classList.add('errorMessage') : lastNameError.classList.remove('errorMessage');
+    email.validity.typeMismatch || email.value === '' ? emailError.classList.add('errorMessage') : emailError.classList.remove('errorMessage');
+    phoneNumber.validity.patternMismatch || phoneNumber.value === '' ? phoneNumberError.classList.add('errorMessage') : phoneNumberError.classList.remove('errorMessage');
+
+    if (password.validity.patternMismatch === false) {
+        passwordError.classList.remove('errorMessage');
+    };
+
+    if (password.value === '') {
+        passwordError.classList.add('errorMessage')
+    }
+
+    password.value === confirmPassword.value ? confirmPasswordError.classList.remove('errorMessage') : confirmPasswordError.classList.add('errorMessage');
+}
 
 // VALIDATION AFTER CREATE ACCOUNT BUTTON PRESS
 
 const createAccountBtn = document.querySelector('#createAccountBtn');
 const newAccountForm = document.querySelector('new-account');
 
-createAccountBtn.addEventListener('click', () => {
+createAccountBtn.addEventListener('click', (e) => {
     if (
         /[a-zA-Z]+/.test(firstName.value)
         &&
@@ -95,7 +116,10 @@ createAccountBtn.addEventListener('click', () => {
         /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password.value)
         &&
         password.value === confirmPassword.value
-    ) {
-        newAccountForm.submit()
+        ) {
+            newAccountForm.submit();
+        } else {
+            validateForm();
+        e.preventDefault();
     }
 });
