@@ -21,7 +21,6 @@ header {
     flex-direction: column;
     justify-content: center;
     position: relative;
-
 }
 
 header div {
@@ -54,7 +53,8 @@ header a {
     bottom: 0;
     text-decoration: none;
     /* margin: 1.625rem 1rem; */
-    margin: 1rem;
+    /* margin: 1rem; */
+    margin: 1.33rem 1rem;
     font-size: 0.75rem;
 }
 
@@ -96,6 +96,13 @@ main form {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    flex-direction: row;
+}
+
+main form div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 main form div label {
@@ -113,7 +120,6 @@ label[for="phone-number"]::after {
 }
 
 main form div input {
-    width: 16rem;
     margin: 0;
     border: 0.0625rem solid black;
     box-sizing: border-box;
@@ -150,6 +156,11 @@ main form div input::placeholder {
     max-height: 0;
     transition: all 1s ease-in-out;
     visibility: hidden;
+    white-space: nowrap;
+}
+
+#password-error {
+    color: black;
 }
 
 .error p {
@@ -164,16 +175,22 @@ main form div input::placeholder {
     visibility: visible;
 }
 
+.submit-section {
+    display: flex;
+    flex-direction: column;
+}
+
 main button {
     margin: 1rem 0;
     color: white;
     background-color: green;
     border: none;
-    padding: 1rem;
+    padding: 1rem 2rem;
     font-size: inherit;
     border-radius: 0.5rem;
     font-family: inherit;
     font-weight: 600;
+
 }
 
 main button:hover {
@@ -186,13 +203,13 @@ main a {
 }
 
 footer p {
+    display: flex;
+    justify-content: center;
     color: black;
     display: flex;
     align-items: center;
     font-size: 0.875rem;
-    /* margin: 1rem; */
-    margin: 0.425rem 1rem;
-
+    margin: 0.75rem 1rem;
 }
 
 footer p span {
@@ -210,11 +227,19 @@ footer p span {
     transform: rotate(360deg) scale(1.2);
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 560px) {
+    .submit-section {
+        display: block;
+    }
 
+    footer p {
+        justify-content: left;
+    }
+}
+
+@media only screen and (min-width: 769px) {
     body {
         flex-direction: row;
-
         flex: 1;
         display: flex;
         overflow: auto;
@@ -229,6 +254,10 @@ footer p span {
     }
 
     .wrapper {
-          width: 58.33%;
+        width: 58.33%;
+    }
+
+    main form div {
+        flex: 0;
     }
 }

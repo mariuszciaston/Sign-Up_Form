@@ -63,10 +63,10 @@
                         <label for="password">PASSWORD</label>
                         <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                         <div id="password-error" class="error">
-                            <p>At least 1 upper case letter</p>
-                            <p>At least 1 lower case letter</p>
-                            <p>At least 1 number or special character</p>
-                            <p>Minimum 8 characters</p>
+                            <p class="upper">At least 1 upper case letter</p>
+                            <p class="lower">At least 1 lower case letter</p>
+                            <p class="numSpecChar">At least 1 number or special character</p>
+                            <p class="eigthChar">Minimum 8 characters</p>
                         </div>
                     </div>
                     <div>
@@ -76,7 +76,7 @@
                     </div>
                 </form>
             </div>
-            <div>
+            <div class="submit-section">
                 <button type="submit" form="new-account" id="createAccountBtn">Create Account</button>
                 <p>Already have an account? <a href="#">Log in</a></p>
             </div>

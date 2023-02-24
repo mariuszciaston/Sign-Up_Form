@@ -96,12 +96,13 @@ function validateForm() {
     password.value === confirmPassword.value ? confirmPasswordError.classList.remove('errorMessage') : confirmPasswordError.classList.add('errorMessage');
 }
 
-// VALIDATION AFTER CREATE ACCOUNT BUTTON PRESS
+// VALIDATION BEFORE SUBMIT
 
 const createAccountBtn = document.querySelector('#createAccountBtn');
 const newAccountForm = document.querySelector('new-account');
 
 createAccountBtn.addEventListener('click', (e) => {
+    validateForm();
     if (
         /[a-zA-Z]+/.test(firstName.value)
         &&
@@ -116,10 +117,9 @@ createAccountBtn.addEventListener('click', (e) => {
         /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password.value)
         &&
         password.value === confirmPassword.value
-        ) {
-            newAccountForm.submit();
-        } else {
-            validateForm();
+    ) {
+        newAccountForm.submit();
+    } else {
         e.preventDefault();
     }
 });
