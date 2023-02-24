@@ -96,6 +96,43 @@ function validateForm() {
     password.value === confirmPassword.value ? confirmPasswordError.classList.remove('errorMessage') : confirmPasswordError.classList.add('errorMessage');
 }
 
+// PASSWORD CHECK MARKS
+
+password.addEventListener('input', function () {
+
+    if (/[A-Z]/.test(password.value)) {
+        upper.classList.remove('deny');
+        upper.classList.add('pass');
+    } else {
+        upper.classList.remove('pass');
+        upper.classList.add('deny');
+    }
+
+    if (/[a-z]/.test(password.value)) {
+        lower.classList.remove('deny');
+        lower.classList.add('pass');
+    } else {
+        lower.classList.remove('pass');
+        lower.classList.add('deny');
+    }
+
+    if (/((?=.*\d)|(?=.*\W+))/.test(password.value)) {
+        numSpecChar.classList.remove('deny');
+        numSpecChar.classList.add('pass');
+    } else {
+        numSpecChar.classList.remove('pass');
+        numSpecChar.classList.add('deny');
+    }
+
+    if (/^.{8,}$/.test(password.value)) {
+        eigthChar.classList.remove('deny');
+        eigthChar.classList.add('pass');
+    } else {
+        eigthChar.classList.remove('pass');
+        eigthChar.classList.add('deny');
+    }
+});
+
 // VALIDATION BEFORE SUBMIT
 
 const createAccountBtn = document.querySelector('#createAccountBtn');

@@ -163,6 +163,29 @@ main form div input::placeholder {
     color: black;
 }
 
+#password-error span{
+line-height: 0px;
+vertical-align: middle;
+}
+
+#password-error span.deny {
+    color: red;
+    font-size: 1.5rem;
+}
+
+#password-error span.pass{
+    color: green;  
+    font-size: 1.3rem;
+}
+.deny::before{
+    content: "🗴"; 
+}
+
+.pass::after{
+content: "✓";
+}
+
+
 .error p {
     font-size: inherit;
     margin: inherit;
@@ -190,7 +213,6 @@ main button {
     border-radius: 0.5rem;
     font-family: inherit;
     font-weight: 600;
-
 }
 
 main button:hover {
