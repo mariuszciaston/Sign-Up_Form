@@ -61,18 +61,18 @@
                     </div>
                     <div>
                         <label for="password">PASSWORD</label>
-                        <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <input type="password" id="password" name="password" minlength="8" placeholder=" " title="Please enter password with minimum 8 characters (including: UpperCase, LowerCase, Number/SpecialChar)" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*[^a-zA-Z\s]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                         <div id="password-error" class="error">
                             
                             <p><span id="upper" class="deny"></span> At least 1 upper case letter</p>
                             <p><span id="lower" class="deny"></span> At least 1 lower case letter</p>
                             <p><span id="numSpecChar" class="deny"></span> At least 1 number or special character</p>
-                            <p><span id="eigthChar" class="deny"></span> Minimum 8 characters</p>
+                            <p><span id="eigthChar" class="deny"></span> Minimum 8 characters without spaces</p>
                         </div>
                     </div>
                     <div>
                         <label for="confirm-password">CONFIRM PASSWORD</label>
-                        <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <input type="password" id="confirm-password" name="confirm-password" minlength="8" placeholder=" " title="Repeat the password for validation purposes" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*[^a-zA-Z\s]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                         <p id="confirm-password-error" class="error">⚠ Passwords do not match</p>
                     </div>
                 </form>

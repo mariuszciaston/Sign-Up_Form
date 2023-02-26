@@ -151,7 +151,7 @@ password.addEventListener('input', () => {
     lower.classList.add('deny');
   }
 
-  if (/((?=.*\d)|(?=.*\W+))/.test(password.value)) {
+  if (/((?=.*\d)|(?=.*[^a-zA-Z\s]))/.test(password.value)) {
     numSpecChar.classList.remove('deny');
     numSpecChar.classList.add('pass');
   } else {
@@ -178,11 +178,18 @@ createAccountBtn.addEventListener('click', (e) => {
     && email.checkValidity() === true
     && phoneNumber.checkValidity() === true
     && password.value.trim() !== ''
-    && /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password.value)
+    && /(?=^.{8,}$)((?=.*\d)|(?=.*[^a-zA-Z\s]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password.value)
     && password.value === confirmPassword.value
   ) {
     newAccountForm.submit();
   } else {
+    e.preventDefault();
+  }
+});
+
+// DISABLE SPACE IN PASSWORD
+password.addEventListener('keypress', (e) => {
+  if (e.keyCode === 32) {
     e.preventDefault();
   }
 });
