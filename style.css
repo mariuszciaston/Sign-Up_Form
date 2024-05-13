@@ -49,8 +49,8 @@ header img {
 header a {
     color: hsla(0, 0%, 100%, 0.75);
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 4px;
+    bottom: -4px;
     text-decoration: none;
     /* margin: 1.625rem 1rem; */
     /* margin: 1rem; */
