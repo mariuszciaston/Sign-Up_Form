@@ -1,285 +1,282 @@
 html {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    color: white;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	color: white;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 header {
-    background: url("images/monstera.jpg") no-repeat center center;
-    background-size: cover;
-    margin: 0;
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+	background: url('images/monstera.jpg') no-repeat center center;
+	background-size: cover;
+	margin: 0;
+	height: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
 }
 
 header div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    margin: auto;
-    padding: 2rem;
-    border-radius: 2rem;
-    gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(0, 0, 0, 0.5);
+	backdrop-filter: blur(8px);
+	margin: auto;
+	padding: 2rem;
+	border-radius: 2rem;
+	gap: 1rem;
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    display: inherit;
-    align-items: inherit;
+	font-size: 2rem;
+	font-weight: 600;
+	display: inherit;
+	align-items: inherit;
 }
 
 header img {
-    height: 6rem;
+	height: 6rem;
 }
 
 header a {
-    color: hsla(0, 0%, 100%, 0.75);
-    position: absolute;
-    right: 4px;
-    bottom: -4px;
-    text-decoration: none;
-    /* margin: 1.625rem 1rem; */
-    /* margin: 1rem; */
-    margin: 1.33rem 1rem;
-    font-size: 0.75rem;
+	color: hsla(0, 0%, 100%, 0.75);
+	position: absolute;
+	right: 0px;
+	bottom: -4px;
+	text-decoration: none;
+	margin: 1.33rem 1rem;
+	font-size: 0.75rem;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: hsl(0, 0%, 90%);
-    color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: hsl(0, 0%, 90%);
+	color: black;
 }
 
 main {
-    font-weight: 600;
-    margin: auto;
+	font-weight: 600;
+	margin: auto;
 }
 
-main>div {
-    padding: 1rem;
+main > div {
+	padding: 1rem;
 }
 
 main p {
-    margin: 1rem 0;
-    font-size: 1.25rem;
+	margin: 1rem 0;
+	font-size: 1.25rem;
 }
 
 .input-section {
-    background-color: white;
+	background-color: white;
 }
 
 .input-section .notice {
-    font-weight: 400;
-    font-size: 1rem;
-    color: hsla(0, 0%, 0%, 0.5)
+	font-weight: 400;
+	font-size: 1rem;
+	color: hsla(0, 0%, 0%, 0.5);
 }
 
 main form {
-    font-weight: 400;
-    margin: 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    flex-direction: row;
+	font-weight: 400;
+	margin: 1rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	flex-direction: row;
 }
 
 main form div {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 
 main form div label {
-    display: flex;
-    padding: 0.25rem 0;
+	display: flex;
+	padding: 0.25rem 0;
 }
 
-label[for="password"]::after,
-label[for="confirm-password"]::after,
-label[for="email"]::after,
-label[for="first-name"]::after,
-label[for="last-name"]::after,
-label[for="phone-number"]::after {
-    content: "\00a0 *";
+label[for='password']::after,
+label[for='confirm-password']::after,
+label[for='email']::after,
+label[for='first-name']::after,
+label[for='last-name']::after,
+label[for='phone-number']::after {
+	content: '\00a0 *';
 }
 
 main form div input {
-    margin: 0;
-    border: 0.0625rem solid black;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0.25rem;
+	margin: 0;
+	border: 0.0625rem solid black;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.25rem;
 }
 
 main form div input:focus {
-    border: solid 0.0625rem black;
-    outline: solid 0.125rem black;
-    border-radius: 0.125rem;
+	border: solid 0.0625rem black;
+	outline: solid 0.125rem black;
+	border-radius: 0.125rem;
 }
 
 main form div input:not(:focus):valid {
-    background-color: rgba(0, 255, 0, 0.1);
+	background-color: rgba(0, 255, 0, 0.1);
 }
 
 main form div input:not(:focus):not(:placeholder-shown):invalid {
-    background-color: rgba(255, 0, 0, 0.1);
+	background-color: rgba(255, 0, 0, 0.1);
 }
 
 main form div input::placeholder {
-    color: rgba(0, 0, 0, 0.25);
+	color: rgba(0, 0, 0, 0.25);
 }
 
 .error {
-    width: 16rem;
-    font-size: 0.875rem;
-    color: red;
-    opacity: 0;
-    margin: 0;
-    padding: 0.25rem 0;
-    max-height: 0;
-    transition: all 1s ease-in-out;
-    visibility: hidden;
-    white-space: nowrap;
+	width: 16rem;
+	font-size: 0.875rem;
+	color: red;
+	opacity: 0;
+	margin: 0;
+	padding: 0.25rem 0;
+	max-height: 0;
+	transition: all 1s ease-in-out;
+	visibility: hidden;
+	white-space: nowrap;
 }
 
 #password-error {
-    color: black;
+	color: black;
 }
 
-#password-error span{
-line-height: 0px;
-vertical-align: middle;
+#password-error span {
+	line-height: 0px;
+	vertical-align: middle;
 }
 
 #password-error span.deny {
-    color: red;
-    font-size: 1.5rem;
+	color: red;
+	font-size: 1.5rem;
 }
 
-#password-error span.pass{
-    color: green;  
-    font-size: 1.3rem;
+#password-error span.pass {
+	color: green;
+	font-size: 1.3rem;
 }
-.deny::before{
-    content: "🗴"; 
-}
-
-.pass::after{
-content: "✓";
+.deny::before {
+	content: '🗴';
 }
 
+.pass::after {
+	content: '✓';
+}
 
 .error p {
-    font-size: inherit;
-    margin: inherit;
-    padding: 0.125rem 0;
+	font-size: inherit;
+	margin: inherit;
+	padding: 0.125rem 0;
 }
 
 .errorMessage {
-    max-height: 128px;
-    opacity: 1;
-    visibility: visible;
+	max-height: 128px;
+	opacity: 1;
+	visibility: visible;
 }
 
 .submit-section {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 main button {
-    margin: 1rem 0;
-    color: white;
-    background-color: green;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: inherit;
-    border-radius: 0.5rem;
-    font-family: inherit;
-    font-weight: 600;
+	margin: 1rem 0;
+	color: white;
+	background-color: green;
+	border: none;
+	padding: 1rem 2rem;
+	font-size: inherit;
+	border-radius: 0.5rem;
+	font-family: inherit;
+	font-weight: 600;
 }
 
 main button:hover {
-    cursor: pointer;
-    background-color: darkgreen;
+	cursor: pointer;
+	background-color: darkgreen;
 }
 
 main a {
-    color: green;
+	color: green;
 }
 
 footer p {
-    display: flex;
-    justify-content: center;
-    color: black;
-    display: flex;
-    align-items: center;
-    font-size: 0.875rem;
-    margin: 0.75rem 1rem;
+	display: flex;
+	justify-content: center;
+	color: black;
+	display: flex;
+	align-items: center;
+	font-size: 0.875rem;
+	margin: 0.75rem 1rem;
 }
 
 footer p span {
-    font-size: 1.625rem;
+	font-size: 1.625rem;
 }
 
 .fa-github {
-    color: black;
-    opacity: 75%;
-    transition: transform 0.3s ease-in-out;
+	color: black;
+	opacity: 75%;
+	transition: transform 0.5s ease-in-out;
 }
 
 .fa-github:hover {
-    opacity: 100%;
-    transform: rotate(360deg) scale(1.2);
+	opacity: 100%;
+	transform: rotate(360deg) scale(1.2);
 }
 
 @media only screen and (min-width: 560px) {
-    .submit-section {
-        display: block;
-    }
+	.submit-section {
+		display: block;
+	}
 
-    footer p {
-        justify-content: left;
-    }
+	footer p {
+		justify-content: left;
+	}
 }
 
 @media only screen and (min-width: 769px) {
-    body {
-        flex-direction: row;
-        flex: 1;
-        display: flex;
-        overflow: auto;
-    }
+	body {
+		flex-direction: row;
+		flex: 1;
+		display: flex;
+		overflow: auto;
+	}
 
-    header {
-        min-height: 100vh;
-        width: 41.66%;
-        position: sticky;
-        top: 0px;
-        bottom: 0px;
-    }
+	header {
+		min-height: 100vh;
+		width: 41.66%;
+		position: sticky;
+		top: 0px;
+		bottom: 0px;
+	}
 
-    .wrapper {
-        width: 58.33%;
-    }
+	.wrapper {
+		width: 58.33%;
+	}
 
-    main form div {
-        flex: 0;
-    }
+	main form div {
+		flex: 0;
+	}
 }
