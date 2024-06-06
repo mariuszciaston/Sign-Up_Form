@@ -6,4 +6,6 @@ Features:<br>
 • Error messages transitions<br>
 • Responsive design based on flexbox
 
-[Live Demo](https://mariuszciaston.github.io/Sign-Up_Form/) :point_left:
+[Live Demo](https://mariuszciaston.github.io/Sign-Up_Form/) :point_left: <br><br>
+
+![Sign-Up_Form.png](Sign-Up_Form.png)
